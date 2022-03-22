@@ -15,6 +15,8 @@ const App = () => {
   const [search, setSearch] = useState('');
   // Repositories results
   const [results, setResults] = useState([]);
+  // Number of results
+  const [nbResults, setNbResults] = useState(0);
 
   const loadResults = () => {
     // TODO : Include loader
@@ -23,6 +25,7 @@ const App = () => {
       .then((response) => {
         console.log('repositories: ', response.data.items);
         setResults(response.data.items);
+        setNbResults(response.data.total_count);
       })
       .catch((error) => {
         console.warn(error);
@@ -40,7 +43,7 @@ const App = () => {
         setSearch={setSearch}
         loadResults={loadResults}
       />
-      <NbResult />
+      <NbResult nbResults={nbResults} />
       <Results repoData={results} />
     </div>
   );
