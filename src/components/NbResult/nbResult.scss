@@ -1,5 +1,9 @@
 @use 'src/styles/vars';
 
 .ui.segment.nbResult {
-  background-color: green;
+  background-color: vars.$dark-color;
+  border: vars.$border;
+  border-bottom-left-radius: 0 0;
+  border-bottom-right-radius: 0 0;
+  margin-bottom: 0;
 }

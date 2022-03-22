@@ -1,5 +1,9 @@
 @use 'src/styles/vars';
 
 .ui.segment.header {
-  background-color: red;
+  background-color: vars.$light-color;
+  margin-bottom: -5px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }

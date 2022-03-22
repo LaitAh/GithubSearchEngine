@@ -1,12 +1,15 @@
-import { Segment } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import Result from './Result';
 import './results.scss';
 
 const Results = () => (
-  <Segment className="results">
-    There will be the list of the results
+  <Card.Group itemsPerRow={3} stackable className="results">
     <Result />
-  </Segment>
+    <Result />
+    <Result />
+    <Result />
+    <Result />
+  </Card.Group>
 );
 
 export default Results;

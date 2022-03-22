@@ -1,5 +1,31 @@
 @use 'src/styles/vars';
 
-.ui.segment.result {
-  background-color: blue;
+.ui.card.result {
+  background-color: vars.$light-color;
+  border: none;
+  color: vars.$text-color;
+
+  .image.result-image {
+    background-color: grey;
+    height: 150px;
+    
+  }
+
+  .content.result-content {
+    border: none;
+    color: vars.$text-color;
+    background-color: vars.$light-color;
+
+    .header.result-content--header {
+      color: vars.$text-color;
+    }
+
+    .meta.result-content--meta {
+      color: vars.$secondary-text-color;
+    }
+
+    .description.result-content--description {
+      color: vars.$text-color;
+    }
+  }
 }

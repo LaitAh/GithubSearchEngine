@@ -4,7 +4,7 @@ import SearchBar from '../SearchBar';
 import NbResult from '../NbResult';
 import Results from '../Results';
 
-import './styles.css';
+import './styles.scss';
 
 // == Composant
 const App = () => (

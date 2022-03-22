@@ -1,9 +1,18 @@
-import { Segment } from 'semantic-ui-react';
+import { Segment, Form, Input } from 'semantic-ui-react';
 import './searchBar.scss';
 
 const SearchBar = () => (
   <Segment className="searchBar">
-    There will be the search bar
+    <Form className="searchBar-form">
+      <Form.Field>
+        <Input
+          id="input"
+          className="searchBar-form--input"
+          icon="search"
+          placeholder="Search..."
+        />
+      </Form.Field>
+    </Form>
   </Segment>
 );
 

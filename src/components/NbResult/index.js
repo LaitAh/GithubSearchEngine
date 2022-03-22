@@ -3,7 +3,7 @@ import './nbResult.scss';
 
 const NbResult = () => (
   <Segment className="nbResult">
-    There will be the number of result
+    The search returned 2 results
   </Segment>
 );
 

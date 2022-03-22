@@ -1,5 +1,11 @@
 @use 'src/styles/vars';
 
-.ui.segment.results {
-  background-color: yellow;
+.ui.cards.results {
+  background-color: vars.$dark-color;
+  border: vars.$border;
+  border-top: none;
+  border-radius: .28571429rem;
+  border-top-right-radius: 0 0;
+  border-top-left-radius: 0 0;
+  margin: 0;
 }
