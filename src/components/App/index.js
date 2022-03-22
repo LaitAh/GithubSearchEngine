@@ -21,13 +21,12 @@ const App = () => {
   // Indicates whether or not to display the loader
   const [loading, setLoading] = useState(false);
 
-
   const loadResults = () => {
     setLoading(true);
 
     axios.get(`https://api.github.com/search/repositories?q=${search}`)
       .then((response) => {
-        // console.log('repositories: ', response.data.items);
+        console.log('repositories: ', response.data.items);
         setResults(response.data.items);
         setNbResults(response.data.total_count);
       })
