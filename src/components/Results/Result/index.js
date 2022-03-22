@@ -23,6 +23,7 @@ Result.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
   owner: PropTypes.shape({
+    login: PropTypes.string.isRequired,
     avatar_url: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
   }).isRequired,
