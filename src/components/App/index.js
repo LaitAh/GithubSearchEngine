@@ -13,6 +13,8 @@ import './styles.scss';
 const App = () => {
   // Search input value (in SearchBar component)
   const [search, setSearch] = useState('');
+  // Repositories results
+  const [results, setResults] = useState([]);
 
   const loadResults = () => {
     // TODO : Include loader
@@ -20,7 +22,7 @@ const App = () => {
     axios.get(`https://api.github.com/search/repositories?q=${search}`)
       .then((response) => {
         console.log('repositories: ', response.data.items);
-
+        setResults(response.data.items);
       })
       .catch((error) => {
         console.warn(error);
@@ -39,7 +41,7 @@ const App = () => {
         loadResults={loadResults}
       />
       <NbResult />
-      <Results />
+      <Results repoData={results} />
     </div>
   );
 };

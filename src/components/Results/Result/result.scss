@@ -6,9 +6,8 @@
   color: vars.$text-color;
 
   .image.result-image {
-    background-color: grey;
-    height: 150px;
-    
+    display: block;
+    max-height: 220px;
   }
 
   .content.result-content {
