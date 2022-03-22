@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+import { Dimmer, Loader } from 'semantic-ui-react';
 import Header from '../Header';
 import SearchBar from '../SearchBar';
 import NbResult from '../NbResult';
@@ -13,25 +14,29 @@ import './styles.scss';
 const App = () => {
   // Search input value (in SearchBar component)
   const [search, setSearch] = useState('');
-  // Repositories results
+  // Repositories results (in Result component - passing by Results component)
   const [results, setResults] = useState([]);
-  // Number of results
+  // Number of results (in NbResults component)
   const [nbResults, setNbResults] = useState(0);
+  // Indicates whether or not to display the loader
+  const [loading, setLoading] = useState(false);
+
 
   const loadResults = () => {
-    // TODO : Include loader
+    setLoading(true);
 
     axios.get(`https://api.github.com/search/repositories?q=${search}`)
       .then((response) => {
-        console.log('repositories: ', response.data.items);
+        // console.log('repositories: ', response.data.items);
         setResults(response.data.items);
         setNbResults(response.data.total_count);
       })
       .catch((error) => {
         console.warn(error);
+        // TODO : show error message to the user
       })
       .finally(() => {
-        console.log('Enf of API call');
+        setLoading(false);
       });
   };
 
@@ -45,6 +50,11 @@ const App = () => {
       />
       <NbResult nbResults={nbResults} />
       <Results repoData={results} />
+      {loading && (
+        <Dimmer active>
+          <Loader />
+        </Dimmer>
+      )}
     </div>
   );
 };
